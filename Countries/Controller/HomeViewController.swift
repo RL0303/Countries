@@ -84,10 +84,35 @@ class HomeViewController: UIViewController {
     //IBSegueAction
     //傳遞資料，先將題目隨機打散再傳送過去
     
+    @IBSegueAction func passCapitalsQuestion(_ coder: NSCoder) -> TextQuestionViewController? {
+        
+        makeTenQuestions(mode: .capitals)
+        let controller = TextQuestionViewController(coder: coder)
+        controller?.textQuestion = tenQuestions
+        tenQuestions.removeAll()
+        return controller
+    }
     
     
+    @IBSegueAction func passFlagsQuestion(_ coder: NSCoder) -> ImageQuestionViewController? {
+        
+        makeTenQuestions(mode: .flags)
+        let controller = ImageQuestionViewController(coder: coder)
+        controller?.imageQuestion = tenQuestions
+        tenQuestions.removeAll()
+        return controller
+        
+    }
     
-    
+    @IBSegueAction func passCurrenciesQuestion(_ coder: NSCoder) -> TextQuestionViewController? {
+        
+        makeTenQuestions(mode: .currencies)
+        let controller = TextQuestionViewController(coder: coder)
+        controller?.textQuestion = tenQuestions
+        tenQuestions.removeAll()
+        return controller
+        
+    }
     
 
     /*

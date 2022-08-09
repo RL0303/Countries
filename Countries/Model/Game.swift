@@ -44,7 +44,7 @@ class Game{
         options.shuffle()
         for (i,option) in optionsButton.enumerated(){
             option.configuration?.attributedTitle = AttributedString(options[i])
-            option.configuration?.attributedTitle?.font = UIFont(name: "HanWangYenHeavy", size: 25)
+//            option.configuration?.attributedTitle?.font = UIFont(name: "HanWangYenHeavy", size: 25)
         }
     }
    //判斷選項與選擇的答案是否一樣
