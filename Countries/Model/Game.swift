@@ -36,6 +36,7 @@ class Game{
         }
         
     }
+    
     //更新畫面
     func updateUI(questionTitle:UILabel?,questoinImage:UIImageView?,questionNumber:UILabel,optionsButton:[UIButton]){
         questionTitle?.text = question
@@ -44,7 +45,7 @@ class Game{
         options.shuffle()
         for (i,option) in optionsButton.enumerated(){
             option.configuration?.attributedTitle = AttributedString(options[i])
-            option.configuration?.attributedTitle?.font = UIFont(name: "SystemMedium", size: 28)
+            option.configuration?.attributedTitle?.font = UIFont.boldSystemFont(ofSize: 28.0)
         }
     }
     

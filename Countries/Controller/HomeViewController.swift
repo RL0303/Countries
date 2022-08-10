@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
         let cfdata = data as CFData
         CGAnimateImageDataWithBlock(cfdata, nil) { _, cgImage, _ in
             self.gifImageView?.image = UIImage(cgImage: cgImage)
-            DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
                 self.viewAnimation()
             }
         }
