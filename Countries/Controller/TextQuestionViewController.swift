@@ -45,7 +45,7 @@ class TextQuestionViewController: UIViewController {
             messageString = "做得好～～"
         }else{
             titleString = "答錯了"
-            messageString = "答案是"+game.answer
+            messageString = "答案是" + game.answer
         }
         guard game.questionIndex < 9 else{
             alert(title:titleString!, message: messageString!) {

@@ -40,13 +40,14 @@ class Game{
     func updateUI(questionTitle:UILabel?,questoinImage:UIImageView?,questionNumber:UILabel,optionsButton:[UIButton]){
         questionTitle?.text = question
         questoinImage?.image = UIImage(named: questionImageName ?? "")
-        questionNumber.text = "#\(questionIndex+1)"
+        questionNumber.text = "Q\(questionIndex+1)"
         options.shuffle()
         for (i,option) in optionsButton.enumerated(){
             option.configuration?.attributedTitle = AttributedString(options[i])
-//            option.configuration?.attributedTitle?.font = UIFont(name: "HanWangYenHeavy", size: 25)
+            option.configuration?.attributedTitle?.font = UIFont(name: "SystemMedium", size: 28)
         }
     }
+    
    //判斷選項與選擇的答案是否一樣
     func checkAnswer(tag:Int)->Bool{
         if options[tag] == answer{

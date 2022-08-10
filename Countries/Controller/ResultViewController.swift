@@ -9,16 +9,31 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var gifImageView: UIImageView!
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var resultLabel: UILabel!
     
     var finalScore:Int?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gifAnimation()
         showResult()
 
         // Do any additional setup after loading the view.
+    }
+    
+    //執行gif圖片
+    func gifAnimation(){
+        guard let data = NSDataAsset(name: "gif")?.data else{return}
+        let cfdata = data as CFData
+        CGAnimateImageDataWithBlock(cfdata, nil) { _, cgImage, _ in
+            self.gifImageView?.image = UIImage(cgImage: cgImage)
+            
+        }
     }
     
     func showResult(){
@@ -26,13 +41,13 @@ class ResultViewController: UIViewController {
             scoreLabel.text = "\(finalScore)"
             switch finalScore{
             case 0..<60:
-                resultLabel.text = "你還太淺了...\n快回家多看比賽吧"
+                resultLabel.text = "底子不行，你不夠強！"
             case 60..<80:
-                resultLabel.text = "還行還行！\n平常看球挺認真的喔"
+                resultLabel.text = "不錯哦！"
             case 80..<100:
-                resultLabel.text = "不錯不錯！\n請容我叫一聲資深球迷"
+                resultLabel.text = "太厲害了！"
             case 100:
-                resultLabel.text = "如果喬丹是籃球之神\n你一定是球迷之神～"
+                resultLabel.text = "知識王是你！"
             default:
                 return
             }
