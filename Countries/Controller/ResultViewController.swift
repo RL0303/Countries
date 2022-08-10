@@ -47,7 +47,7 @@ class ResultViewController: UIViewController {
             case 80..<100:
                 resultLabel.text = "太厲害了！"
             case 100:
-                resultLabel.text = "知識王是你！"
+                resultLabel.text = "知識王就是你！"
             default:
                 return
             }

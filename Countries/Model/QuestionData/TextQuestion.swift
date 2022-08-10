@@ -5,8 +5,6 @@
 //  Created by 林辰澤 on 2022/8/8.
 //
 
-//knowledgeQuestion -> capitalsQuestion
-//homeCourtQuestion -> currenciesQuestion
 
 import Foundation
 

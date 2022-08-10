@@ -7,10 +7,6 @@
 
 import UIKit
 
-//knowledgeQuestion -> capitalsQuestion
-//homeCourtQuestion -> currenciesQuestion
-//playerQuestion -> flagsQuestion
-
 enum GameMode{
     case capitals
     case flags

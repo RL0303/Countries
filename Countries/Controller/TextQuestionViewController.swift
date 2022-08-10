@@ -42,7 +42,7 @@ class TextQuestionViewController: UIViewController {
         if game.checkAnswer(tag: sender.tag) == true{
             score += 10
             titleString = "恭喜答對!!!"
-            messageString = "做得好～～"
+            messageString = "真棒！"
         }else{
             titleString = "答錯了"
             messageString = "答案是" + game.answer
